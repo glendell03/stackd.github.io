@@ -10,7 +10,7 @@ export const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 mix-blend-difference text-white"
     >
       <div className="font-mono text-sm uppercase tracking-widest font-bold">
-        DevStudio.
+        STACKD.
       </div>
       <div className="flex gap-8 font-mono text-xs uppercase tracking-widest">
         <a href="#about" className="hover:text-[#FF3300] transition-colors duration-300">About</a>

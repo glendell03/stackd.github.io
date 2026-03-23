@@ -58,7 +58,7 @@ export const Contact = () => {
         </div>
 
         <div className="mt-32 pt-8 border-t border-grid flex flex-col md:flex-row justify-between items-center gap-4 font-mono text-xs uppercase tracking-widest text-gray-500">
-          <p>© {new Date().getFullYear()} DevStudio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} STACKD. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-[#FF3300] transition-colors">Twitter</a>
             <a href="#" className="hover:text-[#FF3300] transition-colors">LinkedIn</a>

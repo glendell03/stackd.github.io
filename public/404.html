@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>STACKD</title>
+    <!--
+      GitHub Pages SPA redirect trick.
+
+      When GitHub Pages serves this 404.html for any unknown path it means the
+      user navigated directly to a client-side route (e.g. a hard refresh or a
+      shared link). We encode the full intended path into sessionStorage and
+      then redirect to the repo root so index.html loads normally. The script
+      in index.html reads sessionStorage and restores the URL via
+      history.replaceState so the React router sees the correct path.
+
+      The base path (/stackd.github.io) is stripped before storing so the
+      value that lands in sessionStorage is the bare application path
+      (e.g. /about or /blog/post-1).
+    -->
+    <script>
+      (function () {
+        var base = '/stackd.github.io';
+        var loc = window.location;
+
+        // Rebuild the path relative to the app root, preserving query/hash.
+        var path =
+          loc.pathname.slice(base.length) +
+          (loc.search ? loc.search : '') +
+          (loc.hash ? loc.hash : '');
+
+        // Fall back to '/' if nothing meaningful is left.
+        if (!path || path === '/') {
+          path = '/';
+        }
+
+        sessionStorage.setItem('spa_redirect', path);
+
+        // Redirect to the GitHub Pages root so index.html is served.
+        loc.replace(base + '/?p=' + encodeURIComponent(path));
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
