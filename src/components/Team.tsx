@@ -6,7 +6,8 @@ const team = [
   {
     name: 'Glendell Bringino',
     role: 'Full Stack Developer',
-    image: '/images/glendell.jpg'
+    image: '/images/glendell.jpg',
+    website: 'https://glendell03.github.io/',
   },
   {
     name: 'Sam Chen',
@@ -53,9 +54,9 @@ export const Team = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-[#0A0A0A] group relative overflow-hidden aspect-[3/4] cursor-crosshair"
             >
-              <img 
-                src={member.image} 
-                alt={member.name} 
+              <img
+                src={member.image}
+                alt={member.name}
                 className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
@@ -63,6 +64,16 @@ export const Team = () => {
               <div className="absolute bottom-0 left-0 p-8 w-full bg-[#0A0A0A] border-t border-[#FF3300]/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                 <h3 className="text-2xl font-bold tracking-tight uppercase mb-1">{member.name}</h3>
                 <p className="font-mono text-xs uppercase tracking-widest text-[#FF3300]">{member.role}</p>
+                {'website' in member && (
+                  <a
+                    href={member.website as string}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs uppercase tracking-widest text-[#F4F4F0]/50 hover:text-[#F4F4F0] transition-colors mt-2 inline-block"
+                  >
+                    Visit Site →
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
