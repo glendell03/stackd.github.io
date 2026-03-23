@@ -4,9 +4,9 @@ import { TextReveal } from './ui/TextReveal';
 
 const team = [
   {
-    name: 'Alex Rivera',
-    role: 'Lead Full Stack',
-    image: 'https://picsum.photos/seed/alex/800/800?blur=1'
+    name: 'Glendell Bringino',
+    role: 'Full Stack Developer',
+    image: '/images/glendell.jpg'
   },
   {
     name: 'Sam Chen',
